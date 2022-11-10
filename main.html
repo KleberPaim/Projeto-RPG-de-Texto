@@ -14,16 +14,46 @@
         <input type="text" name="name" id="name"><br><br>
         <label>Raça</label>
         <select>
-            <option>Elfo</option>
-            <option>Humano</option>
-            <option>Orc</option>
-            <option>Tiefling</option>
-            <option>Dragonato</option>
+            <option selected> </option>
+            <option id="Elfo">Elfo</option>
+            <option id="Humano">Humano</option>
+            <option id="Anao">Anão</option>
+            <option id="Tieflinig">Tiefling</option>
+            <option id="Draconato">Dragonato</option>
         </select>
+
+<!-- As Classes serão condicionadas. Se o usuario escolher X Raça, somente a classe Y W e Z estará disponivel -->
         <label>Classe</label>
-        <input type="number" name="classe" id="classe"><br><br>
+        <Select id="ClasseOps">
+            <option selected> </option>
+            <optgroup id="Combatentes" label="Combatentes" disabled> 
+                <option id="Barbaro">Barbaro</option>
+                <option id="Guerreiro">Guerreiro</option>
+                <option id="Paladino">Paladino</option>
+                <option id="Cacador">Caçador</option>
+                <option id="Pugilista">Pugilista</option>
+            </optgroup>
+            <optgroup id="Especialistas" label="Especialistas" disabled> 
+                <option id="Bardo">Bardo</option>
+                <option id="Monge">Monge</option>
+                <option id="Ladrao">Ladrão</option>
+                <option id="Artificer">Artificer</option>
+                <option id="Nobre">Nobre</option>
+
+            </optgroup>
+            <optgroup id="Conjuradores" label="Conjuradores" disabled> 
+                <option id="Clerigo">Clerigo</option>
+                <option id="Druida">Druida</option>
+                <option id="Feiticeiro">Feiticeiro</option>
+                <option id="Bruxo">Bruxo</option>
+                <option id="Mago">Mago</option>
+            </optgroup>
+        </Select>
+        
         <label>Trilha</label>
         <input type="number" name="trilha" id="trilha"><br><br>
+    </div>
+    <div>
         <label>Força  </label><button> 3d6 </button><br>
         <label>Destreza  </label><button> 3d6 </button><br>
         <label>Constituição  </label><button> 3d6 </button><br>
@@ -32,10 +62,6 @@
         <label>Carisma  </label><button> 3d6 </button><br>
     </div>
 
-    <h5>Lista de Alunos</h5>
-    <section id="listaAluno">
-
-    </section>
     <script src="mecanica.js"> </script>
 </body>
 </html>
