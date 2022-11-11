@@ -31,26 +31,43 @@
                 <option id="Guerreiro">Guerreiro</option>
                 <option id="Paladino">Paladino</option>
                 <option id="Cacador">Caçador</option>
-                <option id="Pugilista">Pugilista</option>
             </optgroup>
             <optgroup id="Especialistas" label="Especialistas" > 
                 <option id="Bardo">Bardo</option>
                 <option id="Monge">Monge</option>
                 <option id="Ladrao">Ladrão</option>
                 <option id="Artificer">Artificer</option>
-                <option id="Nobre">Nobre</option>
 
             </optgroup>
             <optgroup id="Conjuradores" label="Conjuradores" disabled > 
                 <option id="Clerigo">Clerigo</option>
                 <option id="Druida">Druida</option>
-                <option id="Feiticeiro">Feiticeiro</option>
                 <option id="Bruxo">Bruxo</option>
                 <option id="Mago">Mago</option>
             </optgroup>
+        
         </Select>
         <label>Trilha</label>
-        <input type="number" name="trilha" id="trilha"><br><br>
+        <select id="trilha">
+            <optgroup id="Sub-barbaro" label="Caminhos Primitivos">
+                <option id="furia"> Caminho da Furia </option>
+                <option id="espirito"> Caminho do Espirito </option>
+            </optgroup >
+            <optgroup id="Sub-guerreiro" label="Trinamento">
+                <option id="Mestre-das-armas"> Mestre das Armas </option>
+                <option id="Pugilista"> Pugilista </option>
+            </optgroup>
+            <optgroup id="sub-paladino" label="Devoção">
+                <option id="dev-luz"> Devoto da Vida </option>
+                <option id="dev-guerra"> Devoto da Guerra </option>
+            </optgroup>
+            <optgroup id="sub-cacador" label="Estilo de caça">
+                <option id="besta"> Matador de Monstros </option>
+                <option id="caca-conjunta"> Caça conjunta </option>
+            </optgroup>
+            <optgroup id=""></optgroup>
+
+        </select>
     </div>
     <div>
         <label>Força  </label><button> 3d6 </button><br>
