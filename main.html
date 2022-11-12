@@ -14,37 +14,16 @@
         <input type="text" name="name" id="name"><br><br>
         <label>Raça</label>
         <select id="racas" onchange="captura()">
-            <option> </option>
-            <option id="Elfo" value="1">Elfo</option>
-            <option id="Humano">Humano</option>
-            <option id="Anao">Anão</option>
-            <option id="Tieflinig">Tiefling</option>
-            <option id="Draconato">Dragonato</option>
+            <option id="None" selected> </option>
         </select>
 
 <!-- As Classes serão condicionadas. Se o usuario escolher X Raça, somente a classe Y W e Z estará disponivel -->
         <label>Classe</label>
         <Select id="ClasseOps">
             <option selected> </option>
-            <optgroup id="Combatentes" label="Combatentes"> 
-                <option id="Barbaro">Barbaro</option>
-                <option id="Guerreiro">Guerreiro</option>
-                <option id="Paladino">Paladino</option>
-                <option id="Cacador">Caçador</option>
-            </optgroup>
-            <optgroup id="Especialistas" label="Especialistas" > 
-                <option id="Bardo">Bardo</option>
-                <option id="Monge">Monge</option>
-                <option id="Ladrao">Ladrão</option>
-                <option id="Artificer">Artificer</option>
-
-            </optgroup>
-            <optgroup id="Conjuradores" label="Conjuradores" disabled > 
-                <option id="Clerigo">Clerigo</option>
-                <option id="Druida">Druida</option>
-                <option id="Bruxo">Bruxo</option>
-                <option id="Mago">Mago</option>
-            </optgroup>
+            <optgroup id="Combatentes" label="Combatentes"></optgroup>
+            <optgroup id="Especialistas" label="Especialistas"></optgroup>
+            <optgroup id="Conjuradores" label="Conjuradores"></optgroup>
         
         </Select>
         <label>Trilha</label>
@@ -67,7 +46,7 @@
             </optgroup>
 
         </select>
-        <button onclick="novaOpicao()"> Teste </button>
+        <button onclick="createOption()">Teste</button>
     </div>
     <div>
         <label>Força  </label><button> 3d6 </button><br>
