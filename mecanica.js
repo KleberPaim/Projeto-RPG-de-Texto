@@ -29,7 +29,7 @@ for (let t = 0; t < trilha.length; t++){
     selecao.insertAdjacentHTML('beforeend',`<option id="t_${t}" disabled >${trilha[t]}</option>`);
 }
 
-// Essa função é um evento
+// Essa função é um evento que Habilita as trilhas 
 function unlockSubClass(){
     var classe = document.querySelector('#ClasseOps');
     classe = classe.options[classe.selectedIndex].id;
@@ -107,12 +107,22 @@ function unlockSubClass(){
     }
 
 }
-// Essa funçao cria opões nova 
-// function createOption(){
-//     for (let i = 0; i < trilha.length; i++) {
-//         var selecao = document.querySelector('#Combatentes');
-//         selecao.insertAdjacentHTML('beforeend',`<option id="Mago">${trilha[i]}</option>`)
-//     }
+
+//Essa função recebe um valor como parametro. o valor corresponde a 
+function diceroll(dado,repeat){
+    if (repeat > 0){
+        rolagem = []
+        for (let cont = 0; cont < repeat; cont++) {
+            roll = Math.floor(Math.random() * dado +1 )
+            rolagem.push(roll)
+        }
+        console.log(rolagem)
+        console.log(Math.min(...rolagem))
+    }
+    else{
+        console.log(roll)
+        return roll
+    } 
+
     
-    
-// }
+}   

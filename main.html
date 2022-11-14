@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Criação de Personagem</h1>
+
     <div>
         <label>Nome do Personagem: </label>
         <input type="text" name="name" id="name"><br><br>
@@ -28,15 +29,15 @@
         <select id="trilha">
             <option selected> </option>
         </select>
-        <button onclick="createOption()">Teste</button>
     </div>
+
     <div>
-        <label>Força  </label><button> 3d6 </button><br>
-        <label>Destreza  </label><button> 3d6 </button><br>
-        <label>Constituição  </label><button> 3d6 </button><br>
-        <label>Inteligencia  </label><button> 3d6 </button><br>
-        <label>Sabedoria  </label><button> 3d6 </button><br>
-        <label>Carisma  </label><button> 3d6 </button><br>
+        <label>Força  </label><button onclick="diceroll(6,4)"> 4d6 </button><br>
+        <label>Destreza  </label><button onclick="diceroll(6)"> 4d6 </button><br>
+        <label>Constituição  </label><button onclick="diceroll(6)"> 4d6 </button><br>
+        <label>Inteligencia  </label><button> 4d6 </button><br>
+        <label>Sabedoria  </label><button> 4d6 </button><br>
+        <label>Carisma  </label><button> 4d6 </button><br>
     </div>
 
     <script src="mecanica.js"> </script>
