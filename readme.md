@@ -1,7 +1,8 @@
 Organizando ideia e colocando em ação.
-1 - Criar um formlário para que o usuario crie seu personagem. 
+REGRA DE NEGÓCIO 
+- O Jogador deve escolher um nome para ser personagem.
+- Em seguinda, selecionar uma raça (Que por pardrão deve estar vazia).
+- As Trilhas devem aparecer somente quando o usuario escolher a classe. 
 
-Atualização de Projeto 0.4 (11/11/2022)
-- As Trilhas devem ser adicionadas seguindo as regras condicionais. Cada classe terá acesso a 2 trilhas diferentes. 
-Caso o Usuario escolhar Classe x somente as trilhas y e z  apareceram nas opções de tilha. 
-
+- os valores de força, cosntituição e outros serão sorteados em um Botão e exibidos ao lado do atributo em questão. Cada um deve sortear numeros de 1 a 6 três vezes e somar esses valores.
+- 

@@ -13,13 +13,11 @@
         <label>Nome do Personagem: </label>
         <input type="text" name="name" id="name"><br><br>
         <label>Raça</label>
-        <select id="racas" onchange="captura()">
-            <option id="None" selected> </option>
+        <select id="racas">
+            <option selected> </option>
         </select>
-
-<!-- As Classes serão condicionadas. Se o usuario escolher X Raça, somente a classe Y W e Z estará disponivel -->
         <label>Classe</label>
-        <Select id="ClasseOps">
+        <Select id="ClasseOps" onchange="unlockSubClass()">
             <option selected> </option>
             <optgroup id="Combatentes" label="Combatentes"></optgroup>
             <optgroup id="Especialistas" label="Especialistas"></optgroup>
@@ -28,23 +26,7 @@
         </Select>
         <label>Trilha</label>
         <select id="trilha">
-            <optgroup id="Sub-barbaro" label="Caminhos Primitivos">
-                <option id="furia"> Caminho da Furia </option>
-                <option id="espirito"> Caminho do Espirito </option>
-            </optgroup >
-            <optgroup id="Sub-guerreiro" label="Trinamento">
-                <option id="Mestre-das-armas"> Mestre das Armas </option>
-                <option id="Pugilista"> Pugilista </option>
-            </optgroup>
-            <optgroup id="sub-paladino" label="Devoção">
-                <option id="dev-luz"> Devoto da Vida </option>
-                <option id="dev-guerra"> Devoto da Guerra </option>
-            </optgroup>
-            <optgroup id="sub-cacador" label="Estilo de caça">
-                <option id="besta"> Matador de Monstros </option>
-                <option id="caca-conjunta"> Caça conjunta </option>
-            </optgroup>
-
+            <option selected> </option>
         </select>
         <button onclick="createOption()">Teste</button>
     </div>
