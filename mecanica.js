@@ -28,8 +28,7 @@ for (let t = 0; t < trilha.length; t++){
     var selecao = document.querySelector('#trilha');
     selecao.insertAdjacentHTML('beforeend',`<option id="t_${t}" disabled >${trilha[t]}</option>`);
 }
-
-// Essa função é um evento que Habilita as trilhas 
+// Onchange pra habilitar trilha 
 function unlockSubClass(){
     var classe = document.querySelector('#ClasseOps');
     classe = classe.options[classe.selectedIndex].id;
@@ -107,22 +106,41 @@ function unlockSubClass(){
     }
 
 }
-
-//Essa função recebe um valor como parametro. o valor corresponde a 
+//Dado = Numero de faces | Repeat = Quantidade de dados a serem rolados
 function diceroll(dado,repeat){
     if (repeat > 0){
         rolagem = []
+        soma = 0
         for (let cont = 0; cont < repeat; cont++) {
             roll = Math.floor(Math.random() * dado +1 )
+            soma += roll
             rolagem.push(roll)
         }
+        console.log(soma)
         console.log(rolagem)
-        console.log(Math.min(...rolagem))
+        return soma;rolagem
     }
     else{
-        console.log(roll)
         return roll
     } 
-
-    
 }   
+//função especifica para rolagem de atributo | Roll = Funtion Diceroll 
+function valorBase(roll){
+    final = roll - Math.min(...rolagem)
+    console.log(final)
+    return final
+}
+// onchange pra exibir o atributo
+
+function bonus(){
+    const forca = document.querySelector("#forca");
+    if ( forca == forca){
+        forca.insertAdjacentText('beforebegin', '<div id="two">two</div>')
+        console.log(forca)
+    } else {
+        const destreza = document.querySelector("#destreza");
+        destreza.insertAdjacentText('beforebegin', '<div id="two">two</div>')
+        console.log(destreza)
+    }
+    
+}

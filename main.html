@@ -32,12 +32,12 @@
     </div>
 
     <div>
-        <label>Força  </label><button onclick="diceroll(6,4)"> 4d6 </button><br>
-        <label>Destreza  </label><button onclick="diceroll(6)"> 4d6 </button><br>
-        <label>Constituição  </label><button onclick="diceroll(6)"> 4d6 </button><br>
-        <label>Inteligencia  </label><button> 4d6 </button><br>
-        <label>Sabedoria  </label><button> 4d6 </button><br>
-        <label>Carisma  </label><button> 4d6 </button><br>
+        <label>Força</label><button id="forca" onclick="bonus(valorBase(diceroll(6,4)))" > 4d6 </button><br>
+        <label>Destreza</label><button  id="destreza" onclick="bonus(valorBase(diceroll(6,4)))"> 4d6 </button><br>
+        <label>Constituição</label><button class="atb" id="constituicao" onclick="bonus(valorBase(diceroll(6,4)))"> 4d6 </button><br>
+        <label>Inteligencia</label><button class="atb" id="inteligencia" onclick="bonus(valorBase(diceroll(6,4)))"> 4d6 </button><br>
+        <label>Sabedoria</label><button class="atb" id="sabedoria" onclick="bonus(valorBase(diceroll(6,4)))"> 4d6 </button><br>
+        <label>Carisma</label><button class="atb" id="carisma" onclick="bonus(valorBase(diceroll(6,4)))"> 4d6 </button><br>
     </div>
 
     <script src="mecanica.js"> </script>
