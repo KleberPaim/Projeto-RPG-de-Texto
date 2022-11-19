@@ -14,11 +14,11 @@
     <span>Nome do Personagem: </span>
     <input type="text" name="name" id="name"><br><br>
     <label>Raça</label>
-    <select id="racas" >
+    <select id="racas" onchange="bonusDaRaca()">
         <option selected> </option>
     </select>
     <label>Classe</label>
-    <Select id="ClasseOps" onchange="unlockSubClass()">
+    <Select id="ClasseOps" onchange="desbloqueiaTrilha()">
         <option selected> </option>
         <optgroup id="Combatentes" label="Combatentes"></optgroup>
         <optgroup id="Especialistas" label="Especialistas"></optgroup>
