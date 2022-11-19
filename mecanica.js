@@ -28,9 +28,9 @@ for (let t = 0; t < char[2].length; t++){
 //criar Atributos
 for (let a = 0; a < char[3].length; a++) {
     var selecao = document.querySelector('#atributos');
-    selecao.insertAdjacentHTML('afterend',`<big id='valorbase_${a}'> 00 </big> <small id ='bonus_${a}'> Mod: 0</small> </<label>${char[3][a]}</label><button id="atb_${a}" onclick="bonus(${a},valorBase(diceroll(6,4)))" > 4d6 </button> <br>`);
+    selecao.innerHTML += `<big id='valorbase_${a}'> 00 </big> <small id ='bonus_${a}'> Mod: 0</small> </<label>${char[3][a]}</label><button id="atb_${a}" onclick="bonus(${a},valorBase(diceroll(6,4)))" > 4d6 </button> <br>`;
+    document.body.appendChild(selecao)
 }
-
 //onchange 
 function bonusDaRaca(){
     var raca = document.querySelector('#racas');
@@ -58,7 +58,6 @@ function bonusDaRaca(){
     }
 
 }
-
 // Onchange pra habilitar trilha 
 function desbloqueiaTrilha(){
     var classe = document.querySelector('#ClasseOps');
