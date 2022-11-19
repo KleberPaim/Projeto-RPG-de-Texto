@@ -5,41 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
-    <title>Matriz com Forms</title>
+    <title>RPG POR TEXTO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
+<div>
     <h1>Criação de Personagem</h1>
+    <span>Nome do Personagem: </span>
+    <input type="text" name="name" id="name"><br><br>
+    <label>Raça</label>
+    <select id="racas" >
+        <option selected> </option>
+    </select>
+    <label>Classe</label>
+    <Select id="ClasseOps" onchange="unlockSubClass()">
+        <option selected> </option>
+        <optgroup id="Combatentes" label="Combatentes"></optgroup>
+        <optgroup id="Especialistas" label="Especialistas"></optgroup>
+        <optgroup id="Conjuradores" label="Conjuradores"></optgroup>
+    
+    </Select>
+    <label>Trilha</label>
+    <select id="trilha">
+        <option selected> </option>
+    </select>
+</div>
 
-    <div>
-        <label>Nome do Personagem: </label>
-        <input type="text" name="name" id="name"><br><br>
-        <label>Raça</label>
-        <select id="racas">
-            <option selected> </option>
-        </select>
-        <label>Classe</label>
-        <Select id="ClasseOps" onchange="unlockSubClass()">
-            <option selected> </option>
-            <optgroup id="Combatentes" label="Combatentes"></optgroup>
-            <optgroup id="Especialistas" label="Especialistas"></optgroup>
-            <optgroup id="Conjuradores" label="Conjuradores"></optgroup>
-        
-        </Select>
-        <label>Trilha</label>
-        <select id="trilha">
-            <option selected> </option>
-        </select>
-    </div>
+<div>
+    <br>
+    <h2 id="atributos">Atributos</h2>
+</div>
 
-    <div>
-        <label>Força</label><button id="forca" onclick="bonus(valorBase(diceroll(6,4)))" > 4d6 </button><br>
-        <label>Destreza</label><button  id="destreza" onclick="bonus(valorBase(diceroll(6,4)))"> 4d6 </button><br>
-        <label>Constituição</label><button class="atb" id="constituicao" onclick="bonus(valorBase(diceroll(6,4)))"> 4d6 </button><br>
-        <label>Inteligencia</label><button class="atb" id="inteligencia" onclick="bonus(valorBase(diceroll(6,4)))"> 4d6 </button><br>
-        <label>Sabedoria</label><button class="atb" id="sabedoria" onclick="bonus(valorBase(diceroll(6,4)))"> 4d6 </button><br>
-        <label>Carisma</label><button class="atb" id="carisma" onclick="bonus(valorBase(diceroll(6,4)))"> 4d6 </button><br>
-    </div>
 
     <script src="mecanica.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 </body>
 </html>
