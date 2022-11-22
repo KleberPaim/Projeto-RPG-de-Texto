@@ -5,43 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
-    <title>RPG POR TEXTO</title>
+    <title>Gerador de Card de RPG</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
-<body>
+<body> 
+<div id="corpo" class="container-sm p-3 mb-2 bg-dark bg-gradient text-white ">
 <div>
-    <h1>Criação de Personagem</h1>
-    <span>Nome do Personagem: </span>
-    <input type="text" name="name" id="name"><br><br>
-    <div>
-        <h2>PV:</h2><h2 id="pv"></h2><small>(Ponto de vida)</small>
-        <h2>PE:</h2><h2 id="pe"></h2><small>(Ponto de energia)</small>
+    <h1 class='text-center'>Criação de Personagem</h1><br>
+    <div class="input-group">
+        <span class="input-group-text">Nome do Personagem: </span>
+        <input type="text" name="name" class="form-control" id="name">
     </div>
     <br>
-    <label>Raça</label>
-    <select id="racas" onchange="bonusDaRaca()">
-        <option selected> </option>
-    </select>
-    <label>Classe</label>
-    <Select id="ClasseOps" onchange="vida_Energia(desbloqueiaTrilha())">
-        <option selected> </option>
-        <optgroup id="Combatentes" label="Combatentes" ></optgroup>
-        <optgroup id="Especialistas" label="Especialistas"></optgroup>
-        <optgroup id="Conjuradores" label="Conjuradores"></optgroup>
+    <div id="PVPE" >
+        <h2 class="elementoA">❤PV:</h2><h2 class="elementoA" id="pv"></h2><small class="elementoB" >(Ponto de vida)</small>
+        <h2 class="elementoA">⚡PE:</h2><h2 class="elementoA" id="pe"></h2><small class="elementoB" >(Ponto de energia)</small>
+    </div>
+    <br>
+    <div id="selecao" class="input-group mb-3">
+        <label id="racaslabel" class="input-group-text" for="inputGroupSelect01">Raça</label>
+        <select class="form-select" id="racas" onchange="bonusDaRaca()">
+            <option selected> </option>
+        </select>
+        <label id="ClasseOpslabel" class="input-group-text" for="inputGroupSelect01">Classe</label>
+        <Select class="form-select" id="ClasseOps" onchange="vida_Energia(desbloqueiaTrilha())">
+            <option selected> </option>
+            <optgroup id="Combatentes" label="Combatentes" ></optgroup>
+            <optgroup id="Especialistas" label="Especialistas"></optgroup>
+            <optgroup id="Conjuradores" label="Conjuradores"></optgroup>
+        </Select>
+        <label id ="trilhalabel" class="input-group-text" for="inputGroupSelect01" >Trilha</label>
+        <select class="form-select" id="trilha">
+            <option selected> </option>
+        </select>
+    </div>
     
-    </Select>
-    <label>Trilha</label>
-    <select id="trilha">
-        <option selected> </option>
-    </select>
     </div>
-    <div id="atributos" >
-        <br>
-        <h2 >Atributos</h2>
+    <div id="botaoEnviar">
+        <div class="container-sm bg-danger bg-gradient text-white" id="atributos" >
+            <br>
+            <h2 class='text-center'>Atributos</h2>
+            
+        </div>
     </div>
-    <div>
-        <button id="enviar" onclick="salvar()"> Salvar </button>
-    </div>
+</div>
+
+<div id="card">
+        
+        <button onclick="card()">Card</button>
+</div>
     <script src="mecanica.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 </body>

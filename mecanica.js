@@ -29,36 +29,10 @@ for (let t = 0; t < char[2].length; t++){
 //criar Atributos
 for (let a = 0; a < char[3].length; a++) {
     var selecao = document.querySelector('#atributos');
-    selecao.innerHTML += `<big id='valorbase_${a}'> 00 </big> <small id ='bonus_${a}'> Mod: 0</small> </<label>${char[3][a]}</label><button id="atb_${a}" onclick="vida_Energia(bonus(${a},valorBase(diceroll(3,8))))" > 4d6 </button> <br>`;
-    document.body.appendChild(selecao)
+    selecao.innerHTML += `<big id='valorbase_${a}'> 00 </big>   <small> Mod: </small><small id ='bonus_${a}'>0</small> </<label>${char[3][a]}</label><button class = "dado" id="atb_${a}" onclick="vida_Energia(bonus(${a},valorBase(diceroll(3,8))))" >4d6</button> <br>`;
+    document.body.appendChild(selecao)  
 }
-//onchange 
-function bonusDaRaca(){
-    var raca = document.querySelector('#racas');
-    raca = raca.options[raca.selectedIndex].id;
-    switch (raca) {
-        case `r_0`:
-            console.log(1)
-            break;
-        case `r_1`:
-                console.log(2)
-                break;
-        case `r_2`:
-            console.log(3)
-            break;
-        case `r_3`:
-            console.log(4)
-            break;
-        case `r_4`:
-            console.log(5)
-            break;
-    
-        default:
-            console.log(0)
-            break;
-    }
 
-}
 // Onchange pra habilitar trilha 
 function desbloqueiaTrilha(){
     var classe = document.querySelector('#ClasseOps');
@@ -166,48 +140,48 @@ function bonus(num,final){
     val[0].push(final);
     let soma = 0
     if (final == 2 || final == 3){
-        bonus.innerText = `Mod |-4|`;
+        bonus.innerText = `-4`;
         val[1].push(-4);
         botao.setAttribute("disabled", "disabled");
     }if (final == 4 || final == 5){
-        bonus.innerText = `Mod |-3|`;
+        bonus.innerText = `-3`;
         val[1].push(-3);
         botao.setAttribute("disabled", "disabled");
     }if (final == 6 || final == 7){
-        bonus.innerText = `Mod |-2|`;
+        bonus.innerText = `-2`;
         val[1].push(-2);
         botao.setAttribute("disabled", "disabled");
     }if (final == 8 || final == 9){
-        bonus.innerText = `Mod |-1|`;
+        bonus.innerText = `-1`;
         val[1].push(-1);
         botao.setAttribute("disabled", "disabled");
     }if (final == 10 || final == 11){
-        bonus.innerText = `Mod |+0|`;
+        bonus.innerText = `+0`;
         val[1].push(0);
         botao.setAttribute("disabled", "disabled");
     }if (final == 12 || final == 13){
-        bonus.innerText = `Mod |+1|`;
+        bonus.innerText = `+1`;
         val[1].push(+1);
         botao.setAttribute("disabled", "disabled");
     }if (final == 14 || final == 15){
-        bonus.innerText = `Mod |+2|`;
+        bonus.innerText = `+2`;
         val[1].push(+2);
         botao.setAttribute("disabled", "disabled");
     }if (final == 16 || final == 17){
-        bonus.innerText = `Mod |+3|`;
+        bonus.innerText = `+3`;
         val[1].push(+3);
         botao.setAttribute("disabled", "disabled");
     }if (final == 18 || final == 19){
         val[1].push(+4);
-        bonus.innerText = `Mod |+4|`;
+        bonus.innerText = `+4`;
         botao.setAttribute("disabled", "disabled");
     }if (final == 20 || final == 21){
         val[1].push(+5);
-        bonus.innerText = `Mod |+5|`;
+        bonus.innerText = `+5`;
         botao.setAttribute("disabled", "disabled");
     }if (final == 22 || final == 23){
         val[1].push(+6);
-        bonus.innerText = `Mod |+6|`;
+        bonus.innerText = `+6`;
         botao.setAttribute("disabled", "disabled");
     } 
     // for(var i = 0; i < val[1].length; i++) {
@@ -220,7 +194,7 @@ function bonus(num,final){
     // }
 }   
 // função vai pegar os valores do tipo de classe escolhida e 
-const pv = document.querySelector('#pv');
+    const pv = document.querySelector('#pv');
     const pe = document.querySelector('#pe');
     
 function vida_Energia(){
@@ -241,12 +215,51 @@ function vida_Energia(){
         
     }
 }
-
 //salva todas as informações.
+var botao = document.querySelector('#atributos');
+botao.innerHTML += `<button class="btn btn-dark" id="enviar" onclick="salvar()"> Salvar </button>`
+
+
 function salvar(){
     var nome = document.querySelector('#name').value;
+    let forca = document.querySelector(`#bonus_0`).innerText;
+    let con = document.querySelector(`#bonus_1`).innerText;
+    let dex = document.querySelector(`#bonus_2`).innerText;
+    let int = document.querySelector(`#bonus_3`).innerText;
+    let sab = document.querySelector(`#bonus_4`).innerText;
+    let car = document.querySelector(`#bonus_5`).innerText;
+    let raca = document.querySelector('#racas');
+    raca = raca.options[raca.selectedIndex].innerText;
+    let classe = document.querySelector('#ClasseOps');
+    classe = classe.options[classe.selectedIndex].innerText;
+    let trilha = document.querySelector('#trilha');
+    trilha = trilha.options[trilha.selectedIndex].innerText;
     playerChar.splice(0,1,nome);
-    playerChar.splice(1,1,pv.innerText);
-    playerChar.splice(2,1,pe.innerText);
+    playerChar.splice(1,1,raca);
+    playerChar.splice(2,1,classe);
+    playerChar.splice(3,1,trilha);
+    playerChar.splice(4,1,Number(pv.innerText));
+    playerChar.splice(5,1,Number(pe.innerText));
+    playerChar.splice(6,1,Number(forca));
+    playerChar.splice(7,1,Number(con));
+    playerChar.splice(8,1,Number(dex));
+    playerChar.splice(9,1,Number(int));
+    playerChar.splice(10,1,Number(sab));
+    playerChar.splice(11,1,Number(car));
+    
     console.log(playerChar)
+    
+}
+function card(){
+    var card = document.querySelector('#card').innerHTML += `<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">${playerChar[0]} || Nivel 1</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${playerChar[1]} || ${playerChar[2]} || ${playerChar[3]}</h6>
+      <p class="card-text">❤PV:${playerChar[4]}/${playerChar[4]}</p>
+      <p class="card-text">⚡PE${playerChar[5]}/${playerChar[5]}</p>
+      <a href="main.html" class="card-link">Reiniciar</a>
+    </div>
+  </div>`
+    console.log(card)
+
 }
